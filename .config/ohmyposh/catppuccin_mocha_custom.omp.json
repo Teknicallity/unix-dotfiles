@@ -88,7 +88,7 @@
       "{{if eq .Code 0}}p:purple{{end}}"
     ],
     "background": "transparent",
-    "template": "{{ .Folder }} ❯ "
+    "template": "{{if eq .Folder .UserName}}{{ .PWD }}{{else}}{{ .Folder }}{{end}} ❯ "
   },
   "final_space": true,
   "version": 2
