@@ -6,6 +6,7 @@
 !/.config/ohmyposh/
 /.config/ohmyposh/*
 !/.config/ohmyposh/catppuccin_mocha_custom.omp.json
+!/.config/ohmyposh/zsh-setup.sh
 
 !/.zshrc
 !/.gitignore
