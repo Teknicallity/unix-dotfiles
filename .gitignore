@@ -8,5 +8,6 @@
 !/.config/ohmyposh/catppuccin_mocha_custom.omp.json
 !/.config/ohmyposh/zsh-setup.sh
 
+!/.nanorc
 !/.zshrc
 !/.gitignore

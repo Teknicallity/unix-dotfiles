@@ -46,3 +46,8 @@ alias ls='ls --color'
 
 # Shell Integrations
 eval "$(fzf --zsh)"
+
+# Nano Config
+if [ ! -d ~/.nano ]; then
+  git clone git@github.com:galenguyer/nano-syntax-highlighting.git ~/.nano
+fi
