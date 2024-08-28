@@ -1,0 +1,11 @@
+# ignore all
+/*
+
+!/.config/
+/.config/*
+!/.config/ohmyposh/
+/.config/ohmyposh/*
+!/.config/ohmyposh/catppuccin_mocha_custom.omp.json
+
+!/.zshrc
+!/.gitignore
