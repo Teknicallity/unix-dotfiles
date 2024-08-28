@@ -1,4 +1,7 @@
+# Largely taken from https://www.youtube.com/watch?v=ud7YxC33Z3w
+
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
+#eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Set up Zinit
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
@@ -10,6 +13,7 @@ source "${ZINIT_HOME}/zinit.zsh"
 zinit light zsh-users/zsh-syntax-highlighting  # Colors for commands
 zinit light zsh-users/zsh-completions  # Suggests based on user submitted "man" pages
 zinit light zsh-users/zsh-autosuggestions  # Suggests based on history
+zinit light Aloxaf/fzf-tab  # Brings fzf to autocomplete
 
 # Keybinds
 bindkey '^k' history-search-backward
@@ -17,6 +21,7 @@ bindkey '^j' history-search-forward
 
 # Load zsh-completions
 autoload -U compinit && compinit
+zinit cdreplay -q  # Zinit suggestion with compinit
 
 # Load Auto Complete History
 HISTSIZE=5000
@@ -33,7 +38,10 @@ setopt hist_find_no_dups
 
 # Completion styling
 # zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'  # Ignores case in autocompletions
-zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"  # Adds color to list
+zstyle ':completion:*' menu no  # Disables default zshell completion menu
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'  # cd command fzf and preview
+#zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'  # Needed with ZOxide
 
 # Start Oh My Posh
 if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
@@ -46,6 +54,7 @@ alias ls='ls --color'
 
 # Shell Integrations
 eval "$(fzf --zsh)"
+#eval "$(zoxide init --cmd cd zsh)"  # ZOxide - a better cd?
 
 # Nano Config
 if [ ! -d ~/.nano ]; then
