@@ -2,4 +2,11 @@ set linenumbers
 set tabsize 2
 set tabstospaces
 unset mouse
+set titlecolor white,brightblack
+set keycolor white,brightblack
+set functioncolor white
+set numbercolor white,brightblack
+set errorcolor black,red
+set stripecolor black,brightwhite
+set statuscolor black,brightwhite
 include ~/.nano/*.nanorc
