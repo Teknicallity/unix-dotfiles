@@ -47,7 +47,7 @@
             "tag_icon": "\uf412 ",
             "source": "cli"
           },
-          "template": "({{ .HEAD }}){{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }}<cyan>{{ if gt .Behind 0 }}\uf149{{ end }}{{ if gt .Ahead 0 }}\uf148{{ end }}</>",
+          "template": "({{ .HEAD }}){{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }}<cyan>{{if and (gt .Behind 0) (gt .Ahead 0)}}\uDB83\uDE79{{else if gt .Behind 0}}\uF149{{else if gt .Ahead 0}}\uF148{{end}}</>",
           "style": "plain",
           "type": "git"
         }
