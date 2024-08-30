@@ -46,6 +46,7 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'  # cd command
 # Start Oh My Posh
 if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
   eval "$(oh-my-posh init zsh --config '~/.config/ohmyposh/catppuccin_mocha_custom.omp.json')"
+#  eval "$(oh-my-posh init zsh --config '~/.config/ohmyposh/zen.toml')"
 fi
 
 # Aliases
