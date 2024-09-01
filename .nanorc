@@ -10,3 +10,7 @@ set errorcolor black,red
 set stripecolor black,brightwhite
 set statuscolor black,brightwhite
 include ~/.nano/*.nanorc
+
+bind ^D "{copy}{paste}{up}{end}" main
+bind Sh-M-k "{cut}{up}{paste}{up}" main
+bind Sh-M-j "{cut}{down}{paste}{up}" main

@@ -1,6 +1,7 @@
 # Largely taken from https://www.youtube.com/watch?v=ud7YxC33Z3w
 
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
+export HOMEBREW_NO_ENV_HINTS=true
 #eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Set up Zinit
@@ -15,7 +16,15 @@ zinit light zsh-users/zsh-completions  # Suggests based on user submitted "man" 
 zinit light zsh-users/zsh-autosuggestions  # Suggests based on history
 zinit light Aloxaf/fzf-tab  # Brings fzf to autocomplete
 
+# Add in snippets
+zinit snippets OMZP::pip
+zinit snippets OMZP::sudo
+zinit snippets OMZP::brew
+zinit snippets OMZP::command-not-found
+zinit snippets OMZP::colored-man-pages
+
 # Keybinds
+bindkey '^f' autosuggest-accept
 bindkey '^k' history-search-backward
 bindkey '^j' history-search-forward
 
