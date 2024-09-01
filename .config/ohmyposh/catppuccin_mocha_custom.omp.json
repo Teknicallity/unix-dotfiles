@@ -8,7 +8,8 @@
     "blue": "#89B4FA",
     "dullblue": "#494D64",
     "brightgreen": "#3EC669",
-    "purple": "#bb9af7"
+    "purple": "#bb9af7",
+    "pythonyellow": "#e3e336"
   },
   "blocks": [
     {
@@ -75,6 +76,18 @@
       "newline": true,
       "segments": [
         {
+          "foreground": "p:pythonyellow",
+          "properties": {
+              "display_mode": "environment",
+              "fetch_virtual_env": true,
+              "home_enabled": true
+          },
+          "style": "plain",
+          "template": "\ue235 {{ if .Error }}{{ .Error }}{{ else if eq 1 0 }}{{ .Full }}{{ end }}",
+          "type": "python",
+          "alias": "Python"
+        },
+        {
           "style": "plain",
           "foreground": "p:blue",
           "template": "❯",
@@ -90,7 +103,7 @@
       "{{if eq .Code 0}}p:purple{{end}}"
     ],
     "background": "transparent",
-    "template": "{{if eq .Folder .UserName}}{{ .PWD }}{{else}}{{ .Folder }}{{end}} ❯ "
+    "template": "{{if .Segments.Python }}<p:pythonyellow>\uE235</> {{end}}{{if eq .Folder .UserName}}{{ .PWD }}{{else}}{{ .Folder }}{{end}} ❯ "
   },
   "final_space": true,
   "version": 2
