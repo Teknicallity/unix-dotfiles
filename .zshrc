@@ -17,11 +17,11 @@ zinit light zsh-users/zsh-autosuggestions  # Suggests based on history
 zinit light Aloxaf/fzf-tab  # Brings fzf to autocomplete
 
 # Add in snippets
-zinit snippets OMZP::pip
-zinit snippets OMZP::sudo
-zinit snippets OMZP::brew
-zinit snippets OMZP::command-not-found
-zinit snippets OMZP::colored-man-pages
+zinit snippet OMZP::pip
+zinit snippet OMZP::sudo
+zinit snippet OMZP::brew
+zinit snippet OMZP::command-not-found
+zinit snippet OMZP::colored-man-pages
 
 # Keybinds
 bindkey '^f' autosuggest-accept
