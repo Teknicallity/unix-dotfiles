@@ -20,8 +20,9 @@ zinit light Aloxaf/fzf-tab  # Brings fzf to autocomplete
 zinit snippet OMZP::pip
 zinit snippet OMZP::sudo
 zinit snippet OMZP::brew
-zinit snippet OMZP::command-not-found
 zinit snippet OMZP::colored-man-pages
+zinit snippet OMZP::common-aliases
+zinit snippet OMZP::command-not-found
 
 # Keybinds
 bindkey '^f' autosuggest-accept
