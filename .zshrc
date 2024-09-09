@@ -2,6 +2,7 @@
 
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 export HOMEBREW_NO_ENV_HINTS=true
+export BAT_THEME="Monokai Extended Origin"
 #eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Set up Zinit

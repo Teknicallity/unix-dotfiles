@@ -6,7 +6,7 @@ set tabstop=4 softtabstop=4
 set shiftwidth=4
 set smartindent
 
-call plug#begin()
+call plug#begin() "~/.vim/plugged)
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'catppuccin/vim', { 'as': 'catppuccin' }
