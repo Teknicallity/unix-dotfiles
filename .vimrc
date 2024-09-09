@@ -11,7 +11,17 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 Plug 'ayu-theme/ayu-vim'
+Plug 'tpope/vim-fugitive'
+Plug 'junegunn/gv.vim'
+Plug 'preservim/nerdtree'
+Plug 'rstacruz/vim-closer'
+Plug 'rstacruz/vim-hyperstyle'
 call plug#end()
+
+autocmd VimEnter *
+      \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+  \|   PlugInstall --sync | q
+  \| endif
 
 " let ayucolor="dark"   " for dark version of theme
 
