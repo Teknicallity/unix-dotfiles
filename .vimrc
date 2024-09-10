@@ -16,12 +16,15 @@ Plug 'junegunn/gv.vim'
 Plug 'preservim/nerdtree'
 Plug 'rstacruz/vim-closer'
 Plug 'rstacruz/vim-hyperstyle'
+" Plug 'neoclide/coc.nvim'
 call plug#end()
 
 autocmd VimEnter *
       \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
   \|   PlugInstall --sync | q
   \| endif
+
+" CocInstall coc-json coc-tsserver coc-pyright coc-html coc-css
 
 " let ayucolor="dark"   " for dark version of theme
 
