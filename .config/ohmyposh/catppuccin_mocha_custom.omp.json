@@ -1,29 +1,36 @@
 {
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
   "palette": {
-    "os": "#ACB0BE",
-    "closer": "p:os",
-    "pink": "#F5C2E7",
-    "lavender": "#B4BEFE",
     "blue": "#89B4FA",
-    "dullblue": "#494D64",
     "brightgreen": "#3EC669",
+    "closer": "p:os",
+    "dullblue": "#494D64",
+    "lavender": "#B4BEFE",
+    "os": "#ACB0BE",
+    "pink": "#F5C2E7",
     "purple": "#bb9af7",
     "pythonyellow": "#e3e336"
   },
+  "transient_prompt": {
+    "template": "{{if .Segments.Python }}<p:pythonyellow>\ue235</> {{end}}{{if eq .Folder .UserName}}{{ .PWD }}{{else}}{{ .Folder }}{{end}} ❯ ",
+    "background": "transparent",
+    "foreground_templates": [
+      "{{if gt .Code 0}}red{{end}}",
+      "{{if eq .Code 0}}p:purple{{end}}"
+    ]
+  },
   "blocks": [
     {
+      "type": "prompt",
       "alignment": "left",
-      "newline": true,
       "segments": [
         {
-          "foreground": "p:os",
           "style": "plain",
           "template": "{{.Icon}} ",
+          "foreground": "p:os",
           "type": "os"
         },
         {
-          "foreground": "p:pink",
           "properties": {
             "folder_icon": "..\ue5fe..",
             "home_icon": "~",
@@ -31,10 +38,10 @@
           },
           "style": "plain",
           "template": "{{ .Path }} ",
+          "foreground": "p:pink",
           "type": "path"
         },
         {
-          "foreground": "p:lavender",
           "properties": {
             "branch_icon": "\ue725 ",
             "cherry_pick_icon": "\ue29b ",
@@ -45,66 +52,59 @@
             "no_commits_icon": "\uf0c3 ",
             "rebase_icon": "\ue728 ",
             "revert_icon": "\uf0e2 ",
-            "tag_icon": "\uf412 ",
-            "source": "cli"
+            "source": "cli",
+            "tag_icon": "\uf412 "
           },
-          "template": "({{ .HEAD }}){{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }}<cyan>{{if and (gt .Behind 0) (gt .Ahead 0)}}\uDB83\uDE79{{else if gt .Behind 0}}\uF149{{else if gt .Ahead 0}}\uF148{{end}}</>",
           "style": "plain",
+          "template": "({{ .HEAD }}){{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }}<cyan>{{if and (gt .Behind 0) (gt .Ahead 0)}}\udb83\ude79{{else if gt .Behind 0}}\uf149{{else if gt .Ahead 0}}\uf148{{end}}</>",
+          "foreground": "p:lavender",
           "type": "git"
         }
       ],
-      "type": "prompt"
+      "newline": true
     },
     {
+      "type": "prompt",
       "alignment": "right",
       "overflow": "hide",
       "segments": [
         {
-          "type": "command",
-          "style": "plain",
-          "foreground": "p:dullblue",
           "properties": {
             "command": "[ -d .git ] && git log --pretty=format:'Updated %cr' -1 2>/dev/null || date +%H:%M:%S",
             "shell": "bash"
-          }
+          },
+          "style": "plain",
+          "foreground": "p:dullblue",
+          "type": "command"
         }
-      ],
-      "type": "prompt"
+      ]
     },
     {
+      "type": "prompt",
       "alignment": "left",
-      "newline": true,
       "segments": [
         {
-          "foreground": "p:pythonyellow",
           "properties": {
-              "display_mode": "environment",
-              "fetch_virtual_env": true,
-              "home_enabled": true
+            "display_mode": "environment",
+            "fetch_virtual_env": true,
+            "home_enabled": true
           },
           "style": "plain",
           "template": "\ue235 {{ if .Error }}{{ .Error }}{{ else if eq 1 0 }}{{ .Full }}{{ end }}",
+          "foreground": "p:pythonyellow",
           "type": "python",
           "alias": "Python"
         },
         {
           "style": "plain",
-          "foreground": "p:blue",
           "template": "❯",
+          "foreground": "p:blue",
           "type": "text"
         }
       ],
-      "type": "prompt"
+      "newline": true
     }
   ],
-  "transient_prompt": {
-    "foreground_templates": [
-      "{{if gt .Code 0}}red{{end}}",
-      "{{if eq .Code 0}}p:purple{{end}}"
-    ],
-    "background": "transparent",
-    "template": "{{if .Segments.Python }}<p:pythonyellow>\uE235</> {{end}}{{if eq .Folder .UserName}}{{ .PWD }}{{else}}{{ .Folder }}{{end}} ❯ "
-  },
-  "final_space": true,
-  "version": 2
+  "version": 3,
+  "final_space": true
 }

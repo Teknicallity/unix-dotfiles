@@ -66,7 +66,7 @@ alias ls='ls --color'
 
 # Shell Integrations
 eval "$(fzf --zsh)"
-#eval "$(zoxide init --cmd cd zsh)"  # ZOxide - a better cd?
+eval "$(zoxide init --cmd cd zsh)"  # ZOxide - a better cd?
 
 # Nano Config
 if [ ! -d ~/.nano ]; then
