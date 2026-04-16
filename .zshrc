@@ -73,6 +73,3 @@ if [ ! -d ~/.nano ]; then
   git clone https://github.com/galenguyer/nano-syntax-highlighting.git ~/.nano
 fi
 
-# >>> Added by Spyder >>>
-alias uninstall-spyder=/Users/joshsheputa/Library/spyder-6/uninstall-spyder.sh
-# <<< Added by Spyder <<<
